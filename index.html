@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
     <title>CryptoVault Demo</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -95,7 +101,9 @@
 
             <div class="login-demo-info">
 
-                <strong>Account credentials</strong>
+                <strong>
+                    Account credentials
+                </strong>
 
                 <p>
                     Email
@@ -119,7 +127,10 @@
 
     <!-- ================= DASHBOARD ================= -->
 
-    <div id="dashboardPage" class="dashboard-page hidden">
+    <div
+        id="dashboardPage"
+        class="dashboard-page hidden"
+    >
 
         <div class="demo-notice">
             CRYPTO ACCOUNT — Balances and transactions
@@ -129,7 +140,7 @@
         <div class="app">
 
 
-            <!-- SIDEBAR -->
+            <!-- ================= SIDEBAR ================= -->
 
             <aside class="sidebar">
 
@@ -140,27 +151,42 @@
 
                 <nav>
 
-                    <a href="#" class="nav-link active">
+                    <a
+                        href="#"
+                        class="nav-link active"
+                    >
                         <span>⌂</span>
                         Dashboard
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a
+                        href="#"
+                        class="nav-link"
+                    >
                         <span>₿</span>
                         Wallet
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a
+                        href="#"
+                        class="nav-link"
+                    >
                         <span>◈</span>
                         Markets
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a
+                        href="#"
+                        class="nav-link"
+                    >
                         <span>↔</span>
                         Transactions
                     </a>
 
-                    <a href="#" class="nav-link">
+                    <a
+                        href="#"
+                        class="nav-link"
+                    >
                         <span>⚙</span>
                         Settings
                     </a>
@@ -170,7 +196,10 @@
 
                 <div class="sidebar-bottom">
 
-                    <a href="#" class="nav-link">
+                    <a
+                        href="#"
+                        class="nav-link"
+                    >
                         <span>?</span>
                         Help
                     </a>
@@ -188,7 +217,7 @@
             </aside>
 
 
-            <!-- MAIN CONTENT -->
+            <!-- ================= MAIN CONTENT ================= -->
 
             <main class="main-content">
 
@@ -215,7 +244,7 @@
                         <div class="profile-text">
 
                             <strong>
-                               Milly Ojima 
+                                Milly Ojima
                             </strong>
 
                             <small>
@@ -234,7 +263,7 @@
                 </header>
 
 
-                <!-- BALANCE -->
+                <!-- ================= BALANCE ================= -->
 
                 <section class="balance-section">
 
@@ -249,10 +278,13 @@
                         </h2>
 
                         <span class="profit">
+
                             +€824,418.64
+
                             <small>
                                 (+91.94%) today
                             </small>
+
                         </span>
 
                     </div>
@@ -284,7 +316,7 @@
                 </section>
 
 
-                <!-- STATS -->
+                <!-- ================= STATS ================= -->
 
                 <section class="stats-grid">
 
@@ -342,7 +374,7 @@
                 </section>
 
 
-                <!-- TWO COLUMN AREA -->
+                <!-- ================= TWO COLUMN AREA ================= -->
 
                 <section class="two-columns">
 
@@ -513,7 +545,7 @@
 
                                 <strong>
                                     €1,245.00
-                                </ strong>
+                                </strong>
 
                                 <span>
                                     6.74 SOL
@@ -526,7 +558,7 @@
                     </div>
 
 
-                    <!-- TRANSACTIONS -->
+                    <!-- ================= TRANSACTIONS ================= -->
 
                     <div class="card">
 
@@ -582,7 +614,7 @@
 
                                 <span>
                                     Aug 27, 2026
-                                </ span>
+                                </span>
 
                             </div>
 
@@ -647,7 +679,7 @@
                 </section>
 
 
-                <!-- MARKET -->
+                <!-- ================= MARKET ================= -->
 
                 <section class="card market-card">
 
@@ -770,6 +802,27 @@
 
                 </section>
 
+
+                <!-- ================= MOBILE LOGOUT ================= -->
+
+                <div class="mobile-logout-container">
+
+                    <button
+                        id="mobileLogoutButton"
+                        class="mobile-logout-button"
+                    >
+
+                        <span>
+                            ↪
+                        </span>
+
+                        Logout
+
+                    </button>
+
+                </div>
+
+
             </main>
 
         </div>
@@ -793,18 +846,22 @@
                 ×
             </button>
 
+
             <div class="modal-icon">
                 ✓
             </div>
+
 
             <h2 id="modalTitle">
                 Sorry! You can't Perform action
             </h2>
 
+
             <p>
                 You can't withdraw, deposit or perform any action until you activate your account with €1,200.00 only.
-This account is protected by World Bank Organization
+                This account is protected by World Bank Organization
             </p>
+
 
             <button
                 class="primary-button modal-button"
