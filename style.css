@@ -28,9 +28,12 @@ body {
     min-width: 100%;
     max-width: 100%;
     min-height: 100vh;
+
     background: var(--background);
     color: var(--text);
+
     font-family: Arial, Helvetica, sans-serif;
+
     overflow-x: hidden;
 }
 
@@ -40,12 +43,6 @@ body {
 .login-page {
     width: 100%;
     min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
 
     background:
         radial-gradient(
@@ -59,6 +56,12 @@ body {
             transparent 35%
         ),
         #080b12;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
 }
 
 .login-box {
@@ -159,10 +162,9 @@ body {
     outline: none;
 
     /*
-       IMPORTANT:
        16px prevents iPhone Safari
        from automatically zooming
-       when the input receives focus.
+       when the input is selected.
     */
     font-size: 16px;
 }
@@ -1000,6 +1002,13 @@ button:hover {
 }
 
 
+/* ================= MOBILE LOGOUT ================= */
+
+.mobile-logout-container {
+    display: none;
+}
+
+
 /* ================= TABLET ================= */
 
 @media (max-width: 1000px) {
@@ -1138,6 +1147,55 @@ button:hover {
 
     .market-row span:last-child {
         display: none;
+    }
+
+
+    /* MOBILE LOGOUT BUTTON */
+
+    .mobile-logout-container {
+        display: block;
+
+        width: 100%;
+
+        margin-top: 20px;
+
+        padding-bottom: 25px;
+    }
+
+    .mobile-logout-button {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        background: #1a2433;
+
+        border: 1px solid #2b384b;
+
+        color: #f87171;
+
+        padding: 14px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        cursor: pointer;
+    }
+
+    .mobile-logout-button:hover {
+        background: #263449;
+    }
+
+    .mobile-logout-button span {
+        font-size: 18px;
     }
 }
 
