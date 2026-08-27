@@ -4,13 +4,13 @@
 ========================================= */
 
 
-/* DEMO LOGIN DETAILS */
+/* ================= DEMO LOGIN DETAILS ================= */
 
 const DEMO_EMAIL = "crypto@milly.com";
 const DEMO_PASSWORD = "milly123";
 
 
-/* ELEMENTS */
+/* ================= ELEMENTS ================= */
 
 const loginPage =
     document.getElementById("loginPage");
@@ -36,6 +36,9 @@ const showPasswordButton =
 const logoutButton =
     document.getElementById("logoutButton");
 
+const mobileLogoutButton =
+    document.getElementById("mobileLogoutButton");
+
 const demoModal =
     document.getElementById("demoModal");
 
@@ -47,68 +50,76 @@ const modalTitle =
    CHECK LOGIN STATUS
 ========================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    const loggedIn =
-        sessionStorage.getItem("cryptoDemoLoggedIn");
+        const loggedIn =
+            sessionStorage.getItem(
+                "cryptoDemoLoggedIn"
+            );
 
-    if (loggedIn === "true") {
+        if (loggedIn === "true") {
 
-        showDashboard();
+            showDashboard();
 
-    } else {
+        } else {
 
-        showLogin();
+            showLogin();
+
+        }
 
     }
-
-});
+);
 
 
 /* =========================================
    LOGIN
 ========================================= */
 
-loginForm.addEventListener("submit", function (event) {
+loginForm.addEventListener(
+    "submit",
+    function (event) {
 
-    event.preventDefault();
-
-
-    const email =
-        emailInput.value.trim();
-
-    const password =
-        passwordInput.value;
+        event.preventDefault();
 
 
-    loginError.textContent = "";
+        const email =
+            emailInput.value.trim();
+
+        const password =
+            passwordInput.value;
 
 
-    if (
-        email === DEMO_EMAIL &&
-        password === DEMO_PASSWORD
-    ) {
-
-        sessionStorage.setItem(
-            "cryptoDemoLoggedIn",
-            "true"
-        );
+        loginError.textContent = "";
 
 
-        loginForm.reset();
+        if (
+            email === DEMO_EMAIL &&
+            password === DEMO_PASSWORD
+        ) {
 
-        showDashboard();
+            sessionStorage.setItem(
+                "cryptoDemoLoggedIn",
+                "true"
+            );
 
-    } else {
 
-        loginError.textContent =
-            "Incorrect email or password.";
+            loginForm.reset();
 
-        passwordInput.value = "";
+            showDashboard();
+
+        } else {
+
+            loginError.textContent =
+                "Incorrect email or password.";
+
+            passwordInput.value = "";
+
+        }
 
     }
-
-});
+);
 
 
 /* =========================================
@@ -168,29 +179,79 @@ function showLogin() {
 
 
 /* =========================================
-   LOGOUT
+   LOGOUT FUNCTION
 ========================================= */
 
-logoutButton.addEventListener(
-    "click",
-    function () {
+function logoutUser() {
 
-        sessionStorage.removeItem(
-            "cryptoDemoLoggedIn"
-        );
+    sessionStorage.removeItem(
+        "cryptoDemoLoggedIn"
+    );
 
-        closeDemo();
 
-        showLogin();
+    closeDemo();
 
-        emailInput.value = "";
+    showLogin();
 
-        passwordInput.value = "";
 
-        loginError.textContent = "";
+    emailInput.value = "";
 
-    }
-);
+    passwordInput.value = "";
+
+    loginError.textContent = "";
+
+
+    showPasswordButton.textContent =
+        "Show";
+
+    passwordInput.type =
+        "password";
+
+
+    /*
+       Scroll back to the top
+       after returning to login.
+    */
+
+    window.scrollTo(0, 0);
+
+}
+
+
+/* =========================================
+   DESKTOP LOGOUT
+========================================= */
+
+if (logoutButton) {
+
+    logoutButton.addEventListener(
+        "click",
+        function () {
+
+            logoutUser();
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   MOBILE LOGOUT
+========================================= */
+
+if (mobileLogoutButton) {
+
+    mobileLogoutButton.addEventListener(
+        "click",
+        function () {
+
+            logoutUser();
+
+        }
+    );
+
+}
 
 
 /* =========================================
@@ -200,12 +261,17 @@ logoutButton.addEventListener(
 function showDemo(action) {
 
     modalTitle.textContent =
-        action + " Unavailable Now, Kindly activate your account";
+        action +
+        " Unavailable Now, Kindly activate your account";
 
     demoModal.classList.add("show");
 
 }
 
+
+/* =========================================
+   CLOSE MODAL
+========================================= */
 
 function closeDemo() {
 
@@ -222,7 +288,9 @@ window.addEventListener(
     "click",
     function (event) {
 
-        if (event.target === demoModal) {
+        if (
+            event.target === demoModal
+        ) {
 
             closeDemo();
 
