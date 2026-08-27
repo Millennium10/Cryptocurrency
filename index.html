@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CryptoVault Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <div id="loginPage" class="login-page">
+
+        <div class="login-box">
+
+            <div class="login-logo">
+                Crypto<span>Vault</span>
+            </div>
+
+            <div class="demo-badge">
+                REAL ACCOUNT
+            </div>
+
+            <h1>Welcome back</h1>
+
+            <p class="login-subtitle">
+                Sign in to access your Crypto dashboard
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="loginError"
+                    class="login-error"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Sign In
+                </button>
+
+            </form>
+
+
+            <div class="login-demo-info">
+
+                <strong>Account credentials</strong>
+
+                <p>
+                    Email
+                </p>
+
+                <p>
+                    Password:
+                </p>
+
+            </div>
+
+
+            <p class="demo-warning">
+                This account is protected by World Bank Organization
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div id="dashboardPage" class="dashboard-page hidden">
+
+        <div class="demo-notice">
+            CRYPTO ACCOUNT — Balances and transactions
+        </div>
+
+
+        <div class="app">
+
+
+            <!-- SIDEBAR -->
+
+            <aside class="sidebar">
+
+                <div class="logo">
+                    Crypto<span>Vault</span>
+                </div>
+
+
+                <nav>
+
+                    <a href="#" class="nav-link active">
+                        <span>⌂</span>
+                        Dashboard
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>₿</span>
+                        Wallet
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>◈</span>
+                        Markets
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>↔</span>
+                        Transactions
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span>⚙</span>
+                        Settings
+                    </a>
+
+                </nav>
+
+
+                <div class="sidebar-bottom">
+
+                    <a href="#" class="nav-link">
+                        <span>?</span>
+                        Help
+                    </a>
+
+                    <button
+                        id="logoutButton"
+                        class="logout-button"
+                    >
+                        <span>↪</span>
+                        Logout
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+            <!-- MAIN CONTENT -->
+
+            <main class="main-content">
+
+
+                <!-- HEADER -->
+
+                <header class="header">
+
+                    <div>
+
+                        <p class="small-text">
+                            Welcome back
+                        </p>
+
+                        <h1>
+                            Milly Ojima
+                        </h1>
+
+                    </div>
+
+
+                    <div class="profile">
+
+                        <div class="profile-text">
+
+                            <strong>
+                               Milly Ojima 
+                            </strong>
+
+                            <small>
+                                Account ID: CV-284719
+                            </small>
+
+                        </div>
+
+
+                        <div class="avatar">
+                            MO
+                        </div>
+
+                    </div>
+
+                </header>
+
+
+                <!-- BALANCE -->
+
+                <section class="balance-section">
+
+                    <div class="balance-info">
+
+                        <p>
+                            Total Account Balance
+                        </p>
+
+                        <h2>
+                            €844,726.43
+                        </h2>
+
+                        <span class="profit">
+                            +€824,418.64
+                            <small>
+                                (+91.94%) today
+                            </small>
+                        </span>
+
+                    </div>
+
+
+                    <div class="balance-actions">
+
+                        <button
+                            class="primary-button"
+                            onclick="showDemo('Deposit')"
+                        >
+                            Deposit
+                        </button>
+
+                        <button
+                            onclick="showDemo('Withdraw')"
+                        >
+                            Withdraw
+                        </button>
+
+                        <button
+                            onclick="showDemo('Send')"
+                        >
+                            Send
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- STATS -->
+
+                <section class="stats-grid">
+
+                    <div class="stat">
+
+                        <span>
+                            Available Balance
+                        </span>
+
+                        <strong>
+                            €844,726.43
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>
+                            Total Assets
+                        </span>
+
+                        <strong>
+                            6
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>
+                            24h Profit
+                        </span>
+
+                        <strong class="green">
+                            +€824,418.64
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span>
+                            Account Change
+                        </span>
+
+                        <strong class="green">
+                            +91.84%
+                        </strong>
+
+                    </div>
+
+                </section>
+
+
+                <!-- TWO COLUMN AREA -->
+
+                <section class="two-columns">
+
+
+                    <!-- ASSETS -->
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h3>
+                                My Assets
+                            </h3>
+
+                            <a href="#">
+                                View all
+                            </a>
+
+                        </div>
+
+
+                        <!-- BITCOIN -->
+
+                        <div class="asset">
+
+                            <div class="asset-left">
+
+                                <div class="coin bitcoin">
+                                    ₿
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Bitcoin
+                                    </strong>
+
+                                    <span>
+                                        BTC
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="asset-right">
+
+                                <strong>
+                                    €89,351.27
+                                </strong>
+
+                                <span>
+                                    1.2454 BTC
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ETHEREUM -->
+
+                        <div class="asset">
+
+                            <div class="asset-left">
+
+                                <div class="coin ethereum">
+                                    Ξ
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Ethereum
+                                    </strong>
+
+                                    <span>
+                                        ETH
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="asset-right">
+
+                                <strong>
+                                    €21,874.66
+                                </strong>
+
+                                <span>
+                                    8.143 ETH
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- USDT -->
+
+                        <div class="asset">
+
+                            <div class="asset-left">
+
+                                <div class="coin tether">
+                                    ₮
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Tether
+                                    </strong>
+
+                                    <span>
+                                        USDT
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="asset-right">
+
+                                <strong>
+                                    €14,500.50
+                                </strong>
+
+                                <span>
+                                    14,500.50 USDT
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SOLANA -->
+
+                        <div class="asset">
+
+                            <div class="asset-left">
+
+                                <div class="coin solana">
+                                    S
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Solana
+                                    </strong>
+
+                                    <span>
+                                        SOL
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="asset-right">
+
+                                <strong>
+                                    €1,245.00
+                                </ strong>
+
+                                <span>
+                                    6.74 SOL
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TRANSACTIONS -->
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <h3>
+                                Recent Transactions
+                            </h3>
+
+                            <a href="#">
+                                View all
+                            </a>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon received">
+                                ↓
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <strong>
+                                    BTC Deposit
+                                </strong>
+
+                                <span>
+                                    Aug 27, 2026
+                                </span>
+
+                            </div>
+
+                            <strong class="green">
+                                +0.128 BTC
+                            </strong>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon received">
+                                ↓
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <strong>
+                                    EUR Deposit
+                                </strong>
+
+                                <span>
+                                    Aug 27, 2026
+                                </ span>
+
+                            </div>
+
+                            <strong class="green">
+                                +2,500 EUR
+                            </strong>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon sent">
+                                ↑
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <strong>
+                                    ETH Transfer
+                                </strong>
+
+                                <span>
+                                    Aug 27, 2026
+                                </span>
+
+                            </div>
+
+                            <strong class="red">
+                                -0.45 ETH
+                            </strong>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon received">
+                                ↓
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <strong>
+                                    BTC Received
+                                </strong>
+
+                                <span>
+                                    Aug 27, 2026
+                                </span>
+
+                            </div>
+
+                            <strong class="green">
+                                +0.076 BTC
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- MARKET -->
+
+                <section class="card market-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Crypto Market
+                        </h3>
+
+                        <span class="demo-label">
+                            CRYPTO PRICES
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-row market-heading">
+
+                        <span>
+                            Asset
+                        </span>
+
+                        <span>
+                            Price
+                        </span>
+
+                        <span>
+                            24h Change
+                        </span>
+
+                        <span>
+                            Market Cap
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-row">
+
+                        <strong>
+                            Bitcoin (BTC)
+                        </strong>
+
+                        <span>
+                            €94,250.18
+                        </span>
+
+                        <span class="green">
+                            +2.41%
+                        </span>
+
+                        <span>
+                            $1.87T
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-row">
+
+                        <strong>
+                            Ethereum (ETH)
+                        </strong>
+
+                        <span>
+                            €2,686.42
+                        </span>
+
+                        <span class="green">
+                            +1.87%
+                        </span>
+
+                        <span>
+                            €324.1B
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-row">
+
+                        <strong>
+                            Tether (EUR)
+                        </strong>
+
+                        <span>
+                            €1.00
+                        </span>
+
+                        <span>
+                            +0.01%
+                        </span>
+
+                        <span>
+                            €165.4B
+                        </span>
+
+                    </div>
+
+
+                    <div class="market-row">
+
+                        <strong>
+                            Solana (SOL)
+                        </strong>
+
+                        <span>
+                            €184.73
+                        </span>
+
+                        <span class="red">
+                            -0.82%
+                        </span>
+
+                        <span>
+                            €86.9B
+                        </span>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DEMO MODAL ================= -->
+
+    <div
+        class="modal"
+        id="demoModal"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                onclick="closeDemo()"
+            >
+                ×
+            </button>
+
+            <div class="modal-icon">
+                ✓
+            </div>
+
+            <h2 id="modalTitle">
+                Sorry! You can't Perform action
+            </h2>
+
+            <p>
+                You can't withdraw, deposit or perform any action until you activate your account with €1,200.00 only.
+This account is protected by World Bank Organization
+            </p>
+
+            <button
+                class="primary-button modal-button"
+                onclick="closeDemo()"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
